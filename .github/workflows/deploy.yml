@@ -42,6 +42,6 @@ jobs:
       - name: "Run az commands to deploy container"
         run: |
           az containerapp update \
-          --name jaimesnh \
+          --name ${{ secrets.DOCKERHUB_USERNAME }} \
           --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
           --image ${{ secrets.DOCKERHUB_USERNAME }}/posts:${{ github.sha }}
